@@ -29,11 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
     movieDB.movies.sort();
   });
 
-  adv.forEach((item) => item.remove());
+  const deleteAdv = (arr) => {
+    arr.forEach((item) => item.remove());
+  };
+  deleteAdv(adv);
 
-  genre.textContent = "драма";
+  const makeChanges = (changeContent, changeImage) => {
+    changeContent.textContent = "драма";
 
-  poster.style.backgroundImage = "url('img/bg.jpg')";
+    changeImage.style.backgroundImage = "url('img/bg.jpg')";
+  };
+  makeChanges(genre, poster);
 
   movieDB.movies.sort();
 

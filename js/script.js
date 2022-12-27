@@ -31,3 +31,5 @@ const adv = document.querySelectorAll(".promo__adv img"),
 adv.forEach((item) => item.remove());
 
 genre.textContent = "драма";
+
+poster.style.backgroundImage = "url('img/bg.jpg')";

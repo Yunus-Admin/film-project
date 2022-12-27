@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   makeChanges(genre, poster);
 
-  movieDB.movies.sort();
+  const sortArr = (arr) => arr.sort();
+  sortArr(movieDB.movies);
 
   function createMovieList(films, parent) {
     parent.innerHTML = "";

@@ -35,15 +35,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   poster.style.backgroundImage = "url('img/bg.jpg')";
 
-  movieList.innerHTML = "";
-
   movieDB.movies.sort();
 
-  movieDB.movies.forEach((film, i) => {
-    movieList.innerHTML += `
+  function createMovieList(films, parent) {
+    parent.innerHTML = "";
+
+    films.forEach((film, i) => {
+      parent.innerHTML += `
     <li class="promo__interactive-item">${i + 1}. ${film}
         <div class="delete"></div>
      </li>
     `;
-  });
+    });
+  }
+
+  createMovieList(movieDB.movies, movieList);
 });

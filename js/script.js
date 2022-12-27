@@ -26,23 +26,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const favorite = checkBox.checked;
 
     movieDB.movies.push(newFilm);
-    movieDB.movies.sort();
+    sortArr(movieDB.movies);
   });
 
   const deleteAdv = (arr) => {
     arr.forEach((item) => item.remove());
   };
-  deleteAdv(adv);
 
   const makeChanges = (changeContent, changeImage) => {
     changeContent.textContent = "драма";
 
     changeImage.style.backgroundImage = "url('img/bg.jpg')";
   };
-  makeChanges(genre, poster);
 
   const sortArr = (arr) => arr.sort();
-  sortArr(movieDB.movies);
 
   function createMovieList(films, parent) {
     parent.innerHTML = "";
@@ -56,5 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  deleteAdv(adv);
+  makeChanges(genre, poster);
+  sortArr(movieDB.movies);
   createMovieList(movieDB.movies, movieList);
 });

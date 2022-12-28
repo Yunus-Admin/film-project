@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     });
 
-    document.querySelectorAll(".delete").forEach((btn, i) => {
+    document.querySelectorAll(".delete").forEach((btn, index) => {
       btn.addEventListener("click", () => {
         btn.parentElement.remove();
-        movieDB.movies.slice(i, 1);
-        createMovieList(movieDB.movies, movieList);
+        movieDB.movies.splice(index, 1);
+        createMovieList(films, parent);
       });
     });
   }
